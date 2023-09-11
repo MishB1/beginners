@@ -1,5 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
+/*
 import 'package:flutter/material.dart';
 
 void main() {
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-/*
+
  // List and Maps
 
 void main() {
@@ -141,7 +141,7 @@ void main() {
   //calling a static method
   // which you must call on the class, rather than the instance
   print(Microwave.compareWatts(averageMicrowave, superMicrowave));
-}  */
+}  
 
 class Employee {
   String name;
@@ -192,4 +192,33 @@ class Car {
     print(brand_name);
   }
   
+} */
+
+// Dart Language
+
+
+void main() {
+  print('Hello World!');
+  print('I hope this is the start of a great journey');
+  print(3 * 6);
+  
+// Variable declaration
+//Numbers
+int age = 10; 
+var count = 29; // it is inferredas as integer automatically by the compiler
+int hexValue = 0xEADEBAEE;
+double percentage = 95.3;
+var percent = 83.888;
+double exponents = 1.377e6;
+
+print(hexValue);
+print(exponents);
+
+
+//Strings
+String name = 'Hamish';
+//var name = "Hamish";
+
+bool isOld = true;
+//var isOld = true;
 }
