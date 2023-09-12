@@ -192,7 +192,7 @@ class Car {
     print(brand_name);
   }
   
-} */
+} 
 
 // Dart Language
 
@@ -221,4 +221,69 @@ String name = 'Hamish';
 
 bool isOld = true;
 //var isOld = true;
+}
+
+*/
+
+
+/*
+// 11th Sept, 2023
+// String interpolation
+void main() {
+  //String Interpolation
+
+  String name = 'Hamish Nii Dromo Blay';
+
+  print("My name is $name");
+  print('The number of characters in my name is ' + name.length.toString());
+
+  int l =40, b = 26;
+  print('The sum of $l and $b is ${l + b}');
+  print('The area of the rectangle with length $l and breadth $b is ${l * b}');
+
+} */
+
+/*
+// FINAL AND CONSTANT KEYWORDS
+// if you never want to a value then use either of  these keywords
+// You cant define a "const" keyword in a class without making it static
+void main() {
+  // final keyword
+  final cityName = 'Kumasi';
+   //const keyword
+   const pI = 3.14;
+}
+
+class Square {
+
+  final color = 'Brown';
+  static const gravity = 9.8;
+} */
+
+
+// CONTROL FLOW STATEMENTS
+void main() {
+  // IF AND ELSE STATEMENTS
+  var moneyDollars = 100000;
+
+  if (moneyDollars > 1000) {
+    print('Omo! the money will keep coming, work harder...');
+  } else {
+    print('Boy! you slacking, wake up and grind harder!!');
+  }
+
+  // IF AND ELSE IF STATEMENTS (KNUST GRADUATION CLASS)
+  var cwa = 10;
+
+  if (cwa >= 70 && cwa < 100) {
+    print('Congratulations! you had a First class');
+  } else if (cwa >= 60 && cwa < 70) {
+    print("Congratulations! you had a Second class upper");
+  } else if (cwa >= 50 && cwa < 60) {
+    print("Congratulations! you had a Second class lower");
+  } else if (cwa >= 0 && cwa < 50) {
+    print('Congratulations! you had a Pass');
+  } else {
+    print('Sorry! INVALID CLASS');
+  } 
 }
