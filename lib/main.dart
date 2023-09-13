@@ -260,7 +260,7 @@ class Square {
   static const gravity = 9.8;
 } */
 
-
+/*
 // CONTROL FLOW STATEMENTS
 void main() {
   // IF AND ELSE STATEMENTS
@@ -286,4 +286,59 @@ void main() {
   } else {
     print('Sorry! INVALID CLASS');
   } 
+} */
+
+
+// 12th Sept, 2023
+// TUTORIAL FROM TUTORIALSPOINT'S BOOK
+/*
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyButton()
+    )
+  );
 }
+
+class MyButton extends StatelessWidget {
+  const MyButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('APPBAR'),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(width: 1.0, color: Color(0xFFFFFFFFFF)),
+            left: BorderSide(width: 1.0, color: Color(0xFFFFFFFFFF)),
+            right: BorderSide(width: 1.0, color: Color(0xFFFF000000)),
+            bottom: BorderSide(width: 1.0, color: Color(0xFFFF000000)),
+          ),
+        ),
+        child: Container( 
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 2),
+          decoration: BoxDecoration(
+            border: Border(
+              top: BorderSide(width: 1.0, color: Color(0xFFFFDFDFDF)),
+              left: BorderSide(width: 1.0, color: Color(0xFFFFDFDFDF)),
+              right: BorderSide(width: 1.0, color: Color(0xFFFF7F7F7F)),
+              bottom: BorderSide(width: 1.0, color: Color(0xFFFF7F7F7F)),
+            ),
+            color: Colors.grey,
+          ),
+          child: Text('OK', 
+          textAlign: TextAlign.center, 
+          style: TextStyle(color: Colors.black),
+          ),
+        ),
+      ),
+    );
+  }
+} */
+
+
