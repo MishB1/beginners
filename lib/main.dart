@@ -342,3 +342,16 @@ class MyButton extends StatelessWidget {
 } */
 
 
+
+//16th September 
+// product_layout_app
+
+import 'package:flutter/material.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+     // home: MyApp(),
+    )
+  );
+}
