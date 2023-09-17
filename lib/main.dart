@@ -1,4 +1,4 @@
-hi// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 /*
 import 'package:flutter/material.dart';
 
@@ -353,7 +353,89 @@ import 'package:flutter/material.dart';
 void main(List<String> args) {
   runApp(
     MaterialApp(
-     // home: MyApp(),
+      debugShowCheckedModeBanner: false,
+      home: MyApp(),
     )
   );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+//This widget is the root of the application
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
+      home: MyHomePage(
+        topic: 'My Tech Needs!'),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key, required this.topic});
+
+  final String topic;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(this.topic),
+      ),
+      body: ListView(
+        shrinkWrap: true,
+        padding: EdgeInsets.fromLTRB(2, 10, 2, 10),
+        children: <Widget>[
+          ProductBox(
+            name: "iPhone 15", 
+            description: 'the best phone in the world', 
+            image: "iPhone.jpg", 
+            price: 2000)
+        ],
+      ),
+    );
+  }
+}
+
+class ProductBox extends StatelessWidget {
+  const ProductBox({super.key, required this.name, required this.description, required this.image, required this.price});
+
+  final String name;
+  final String description;
+  final String image;
+  final int price;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(2),
+      height: 120,
+      child: Card(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Image.asset('assets/images/' + image),
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.all(5),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text(this.name, style: TextStyle(fontWeight: FontWeight.bold)), 
+                    Text(this.description),
+                    Text('Price: ' + this.price.toString() + 'dollars')
+                  ],
+                ),
+              )
+            )
+          ],
+        ),
+      ),
+    );
+  }
 }
