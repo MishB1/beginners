@@ -389,13 +389,43 @@ class MyHomePage extends StatelessWidget {
       ),
       body: ListView(
         shrinkWrap: true,
-        padding: EdgeInsets.fromLTRB(2, 10, 2, 10),
+        padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
         children: <Widget>[
           ProductBox(
-            name: "iPhone 15", 
-            description: 'the best phone in the world', 
+            name: "iPhone", 
+            description: 'The best phone in the world', 
             image: "iPhone.jpg", 
-            price: 2000)
+            price: 1999),
+          ProductBox(
+            name: "Flashdrive", 
+            description: 'The fastest drive in the world', 
+            image: "flashdrive.jpg", 
+            price: 10),
+          ProductBox(
+            name: "iPad", 
+            description: 'Apple\'s tablet', 
+            image: "iPad.jpg", 
+            price: 999),
+          ProductBox(
+            name: "Macbook", 
+            description: 'Apple\'s laptop', 
+            image: "macbook.jpg", 
+            price: 2999),
+          ProductBox(
+            name: "Printer", 
+            description: 'Durable and affordable', 
+            image: "printer.jpg", 
+            price: 200),
+          ProductBox(
+            name: "PS5", 
+            description: 'Best gaming console', 
+            image: "PS5.jpg", 
+            price: 500),
+          ProductBox(
+            name: "Samsung phone", 
+            description: 'Best android phone', 
+            image: "samsung.jpg", 
+            price: 250),
         ],
       ),
     );
@@ -403,18 +433,18 @@ class MyHomePage extends StatelessWidget {
 }
 
 class ProductBox extends StatelessWidget {
-  const ProductBox({super.key, required this.name, required this.description, required this.image, required this.price});
+  const ProductBox({super.key, required this.description, required this.image, required this.name, required this.price});
 
-  final String name;
-  final String description;
-  final String image;
-  final int price;
+final String name;
+final String description;
+final int price;
+final String image;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(2),
-      height: 120,
+      padding: EdgeInsets.all(5),
+      height: 150,
       child: Card(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -426,9 +456,9 @@ class ProductBox extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Text(this.name, style: TextStyle(fontWeight: FontWeight.bold)), 
+                    Text(this.name, style: TextStyle(fontWeight: FontWeight.bold),),
                     Text(this.description),
-                    Text('Price: ' + this.price.toString() + 'dollars')
+                    Text('Price: ' + this.price.toString() + ' dollars')
                   ],
                 ),
               )
