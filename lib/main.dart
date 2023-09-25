@@ -469,3 +469,6 @@ final String image;
     );
   }
 }
+
+// 25th September
+// Gesture detection
