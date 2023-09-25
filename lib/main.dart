@@ -470,5 +470,7 @@ final String image;
   }
 }
 
+//couldn't code today jorrrr hmmm hmmm hmm hmmm
+
 // 25th September
 // Gesture detection
