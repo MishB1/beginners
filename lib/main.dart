@@ -348,7 +348,7 @@ couldn't code today Charley ego bee Charley*/
 //16th September 
 // product_layout_app
 
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 
 void main(List<String> args) {
   runApp(
@@ -468,9 +468,103 @@ final String image;
       ),
     );
   }
-}
+}*/
 
 //couldn't code today jorrrr hmmm hmmm hmm hmmm
 
 // 25th September
 // Gesture detection
+/*
+import 'package:flutter/material.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyApp(),
+    )
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+//This widget is the root of the application
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
+      home: MyHomePage(
+        topic: 'My Tech Needs!'),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key, required this.topic});
+  
+  final String topic;
+
+  //user defined functiom
+  void _showDialogue(BuildContext context) {
+    // flutter defined function
+    showDialog(
+      context: context, 
+      builder: (BuildContext context) {
+        //return object of type dialog
+        return AlertDialog(
+          title: Text('Message'),
+          content: Text('Hello MishB'),
+          actions: <Widget>[
+             TextButton(
+              child: Text('Close'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(this.topic),
+      ),
+      body: Center(
+        child: GestureDetector(
+          onTap: () {
+            _showDialogue(context);
+          },
+          child: Text('Reveal'),
+        ),
+      )
+    );
+  }
+}*/
+
+//State Management 
+//26th Septermber
+
+import 'package:flutter/material.dart';
+
+class RatingBox extends StatefulWidget {
+  const RatingBox({super.key});
+
+  @override
+  State<RatingBox> createState() => _RatingBoxState();
+}
+
+class _RatingBoxState extends State<RatingBox> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
