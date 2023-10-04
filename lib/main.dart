@@ -552,8 +552,92 @@ class MyHomePage extends StatelessWidget {
 
 //State Management 
 //26th Septermber
+// just chilling today
+// today too
 
 import 'package:flutter/material.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyApp(),
+    )
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+//This widget is the root of the application
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
+      home: MyHomePage(topic: 'My Tech Needs!'),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key, required this.topic});
+
+  final String topic;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(this.topic),
+      ),
+      body: ListView(
+        shrinkWrap: true,
+        padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+        children: <Widget>[
+          ProductBox(
+            name: "iPhone", 
+            description: 'The best phone in the world', 
+            image: "iPhone.jpg", 
+            price: 1999),
+          ProductBox(
+            name: "Flashdrive", 
+            description: 'The fastest drive in the world', 
+            image: "flashdrive.jpg", 
+            price: 10),
+          ProductBox(
+            name: "iPad", 
+            description: 'Apple\'s tablet', 
+            image: "iPad.jpg", 
+            price: 999),
+          ProductBox(
+            name: "Macbook", 
+            description: 'Apple\'s laptop', 
+            image: "macbook.jpg", 
+            price: 2999),
+          ProductBox(
+            name: "Printer", 
+            description: 'Durable and affordable', 
+            image: "printer.jpg", 
+            price: 200),
+          ProductBox(
+            name: "PS5", 
+            description: 'Best gaming console', 
+            image: "PS5.jpg", 
+            price: 500),
+          ProductBox(
+            name: "Samsung phone", 
+            description: 'Best android phone', 
+            image: "samsung.jpg", 
+            price: 250),
+        ],
+      ),
+    );
+  }
+}
+
 
 class RatingBox extends StatefulWidget {
   const RatingBox({super.key});
@@ -563,8 +647,111 @@ class RatingBox extends StatefulWidget {
 }
 
 class _RatingBoxState extends State<RatingBox> {
+
+  int _rating = 0;
+
+  void _setRatingAsOne(){
+    setState(() {
+      _rating = 1;
+    });
+  }
+
+  void _setRatingAsTwo(){
+    setState(() {
+      _rating = 2;
+    });
+  }
+
+  void _setRatingAsThree(){
+    setState(() {
+      _rating = 3;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+
+    double _size = 20;
+    print(_rating);
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.end, 
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.all(0),
+          child: IconButton(
+            onPressed: _setRatingAsOne, 
+            icon: (_rating >= 1 ? Icon(Icons.star, size: _size,) : Icon(Icons.star_border, size: _size)),
+            color: Colors.red[500],
+            iconSize: _size,
+          ),
+        ),
+
+        Container(
+          padding: EdgeInsets.all(0),
+          child: IconButton(
+            onPressed: _setRatingAsTwo, 
+            icon: (_rating >= 2 ? Icon(Icons.star, size: _size,) : Icon(Icons.star_border, size: _size)),
+            color: Colors.red[500],
+            iconSize: _size,
+          ),
+        ),
+
+        Container(
+          padding: EdgeInsets.all(0),
+          child: IconButton(
+            onPressed: _setRatingAsThree, 
+            icon: (_rating >= 3 ? Icon(Icons.star, size: _size,) : Icon(Icons.star_border, size: _size)),
+            color: Colors.red[500],
+            iconSize: _size,
+          ),
+        )
+      ],
+    );
   }
 }
+
+class ProductBox extends StatelessWidget {
+  const ProductBox({super.key, required this.description, required this.image, required this.name, required this.price});
+
+final String name;
+final String description;
+final int price;
+final String image;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(5),
+      height: 150,
+      child: Card(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Image.asset('assets/images/' + image),
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.all(5),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text(this.name, style: TextStyle(fontWeight: FontWeight.bold),),
+                    Text(this.description),
+                    Text('Price: ' + this.price.toString() + ' dollars'),
+                    RatingBox(),
+                  ],
+                ),
+              )
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// Application State management- Scoped_model
+//Model, example
+
+
