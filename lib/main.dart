@@ -752,6 +752,6 @@ final String image;
 }
 
 // Application State management- Scoped_model
-//Model, example
+//Model, example psttttt
 
 
