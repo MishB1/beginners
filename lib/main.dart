@@ -797,7 +797,9 @@ ScopedModel<Product>(
   ),
 )*/
 
-// Scoped_model app
+
+
+/*// Scoped_model app
 //5th October
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -942,6 +944,23 @@ class ProductBox extends StatelessWidget {
       ),
     );
   }
+}*/
+
+// CONTINUATION OF DART VIDEO TUTORIALS
+// Conditional Expressions 
+
+void main(List<String> args) {
+
+  //1. If condition ? exp1 : exp2
+  // if condition is true, evaluates exp1(and returns its value)
+  // Otherwise, evaluates and returns the value of exp2
+
+  int a = 2;
+  int b = 3;
+  int smallNumber;
+
+  smallNumber = a < b ? a : b;
+  print('$smallNumber is smaller');
 }
 
 
