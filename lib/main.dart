@@ -555,6 +555,7 @@ class MyHomePage extends StatelessWidget {
 // just chilling today
 // today too
 
+/*
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -753,5 +754,212 @@ final String image;
 
 // Application State management- Scoped_model
 //Model, example
+
+class Product {
+  final String name;
+  final String description;
+  final int price;
+  final String image;
+  int rating;
+
+  Product(this.name, this.description, this.price, this.image, this.rating);
+
+  factory Product.fromMap(Map<String, dynamic> json) {
+    return Product(
+      json['name'], 
+      json['desciption'],
+      json['price'],
+      json['image'],
+      json['rating'],
+    );
+  }
+
+  void updateRating(int myRating) {
+     rating = myRating;
+
+     notifyListeners(); 
+  }
+}
+
+//ScopedModel
+//Single Model
+ScopedModel<Product>(
+  model: item,
+  child: AnyWidget()
+)
+ 
+//Multiple Model
+ScopedModel<Product>(
+  model: item1,
+  child: ScopedModel<Product>(
+    model: item2,
+    child: AnyWidget()
+  ),
+)*/
+
+// Scoped_model app
+//5th October
+import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
+import 'product.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyApp(),
+    )
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+
+//This widget is the root of the application
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+      ),
+      home: MyHomePage(topic: 'My Tech Needs!'),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  MyHomePage({Key? key, required this.topic}) : super(key: key);
+
+
+  final String topic;
+  final items = Product.getProducts();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(this.topic),
+      ),
+      body: ListView.builder(
+       itemCount: items.length,
+       itemBuilder: (context, index) {
+        return ProductBox(item: items[index]);
+       }
+      ),
+    );
+  }
+}
+
+
+class RatingBox extends StatelessWidget {
+   RatingBox({Key? key, required this.item}) : super(key: key);
+
+  final Product item;
+
+  Widget build(BuildContext context) {
+
+    double _size = 20;  
+    print(item.rating);
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.end, 
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.all(0),
+          child: IconButton(
+            onPressed: () => this.item.updateRating(1), 
+            icon: (item.rating >= 1 ? Icon(Icons.star, size: _size,) : Icon(Icons.star_border, size: _size)),
+            color: Colors.red[500],
+            iconSize: _size,
+          ),
+        ),
+
+        Container(
+          padding: EdgeInsets.all(0),
+          child: IconButton(
+            onPressed: () => this.item.updateRating(2),
+            icon: (item.rating >= 2 ? Icon(Icons.star, size: _size,) : Icon(Icons.star_border, size: _size)),
+            color: Colors.red[500],
+            iconSize: _size,
+          ),
+        ),
+
+        Container(
+          padding: EdgeInsets.all(0),
+          child: IconButton(
+           onPressed: () => this.item.updateRating(3), 
+            icon: (item.rating >= 3 ? Icon(Icons.star, size: _size,) : Icon(Icons.star_border, size: _size)),
+            color: Colors.red[500],
+            iconSize: _size,
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class ProductBox extends StatelessWidget {
+  const ProductBox({Key? key, required this.item}) : super(key: key);
+
+  final Product item;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(5),
+      height: 150,
+      child: Card(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Image.asset('assets/images/' + this.item.image),
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.all(5),
+                child: ScopedModel<Product>(
+                  model: this.item,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Text(this.item.name, style: TextStyle(fontWeight: FontWeight.bold),),
+                      Text(this.item.description),
+                      Text('Price: ' + this.item.price.toString() + ' dollars'),
+                      ScopedModelDescendant(
+                        builder: (context, child, item) {
+                          return RatingBox(item: item);
+                        }
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
