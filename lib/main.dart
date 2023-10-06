@@ -753,7 +753,7 @@ final String image;
 }
 
 // Application State management- Scoped_model
-//Model, example
+//Model, example psttttt
 
 class Product {
   final String name;
