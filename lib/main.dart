@@ -949,7 +949,7 @@ class ProductBox extends StatelessWidget {
 // CONTINUATION OF DART VIDEO TUTORIALS
 // Conditional Expressions 
 
-void main(List<String> args) {
+/*void main(List<String> args) {
 
   //1. If condition ? exp1 : exp2
   // if condition is true, evaluates exp1(and returns its value)
@@ -961,16 +961,96 @@ void main(List<String> args) {
 
   smallNumber = a < b ? a : b;
   print('$smallNumber is smaller');
-}
 
+  //2. Exp1 ?? exp2 
+  //if exp1 is non-null, evaluate and return its value, else
+  //evaluate and return the value of exp2
 
+  String name = 'name';
 
+  String nameToPrint = name ?? "Who is this";
+  print(nameToPrint);
 
+}*/
 
+ //SWITCH CASE STATEMENTS
+ /*void main() {
+  
+  int grade = 0;
 
+  switch (grade) {
+    case  >= 70 && < 100 :
+      print('Congratulations! you had a First class');
+    case  >= 60 && < 70 :
+      print('Congratulations! you had a Second class upper');
+    case  >= 50 && < 60 :
+      print('Congratulations! you had a Second class lower');
+    case  >= 0 && < 50 :
+      print('Congratulations! you had a Pass');
+    default:
+      print('Sorry! INVALID CLASS');
+  }
+  
+}*/
 
+//FOR LOOP
+// print even numbers between 0- 30
 
+/*void main() {
+  
+  for (var i = 0; i <= 30; i++) {
+    if (i % 2 == 0) {
+      print(i);
+    }
+  }
 
+  // FOR-IN LOOP
+  List cars = ['Bugatti', 'Ford', 'Ferrari', 'Lamborghini'];
+  for (String car in cars) {
+    print(car);
+  }
+}*/
+
+//WHILE LOOP 
+/*void main() {
+  // print even numbers
+
+  var i = 0;
+  while (i < 100) {
+    if (i % 2 == 0) {
+      print(i);
+      
+    }  
+     i++;
+  }
+}*/
+
+// DO WHILE LOOP
+/*void main() {
+  //print even numbers
+
+   int i = 0;
+   do {
+    if (i % 2 == 0) {
+       print(i);
+    }
+    
+     i++;
+   } while (i < 50);
+}*/
+
+/*    // BREAK KEYWORD AND LABELS
+void main() {
+  outerloop: for (var i = 0; i <= 3; i++) {
+    innerloop: for (var j = 0; j < 3; j++) {
+      print('$i $j');
+      
+       if (i == 2 && j ==2) {
+      break outerloop;
+    }
+  }
+  }
+} */
 
 
 
